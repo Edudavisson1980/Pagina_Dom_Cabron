@@ -17,11 +17,11 @@
             display: flex;
             align-items: center;
             padding: 20px;
-            background-color: #05053d; /* Azul escuro */
+            background-color: #00008B; /* Azul escuro */
             color: white;
         }
         header img {
-            max-height: 200px;
+            max-height: 100px; /* Aumentar o tamanho do logo */
             margin-right: 20px;
         }
         .title-container {
@@ -52,8 +52,29 @@
             background-color: #f4f4f4;
             padding: 20px;
         }
-
-
+        .apresentacoes {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .text-content h2 {
+            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
+        }
+        .image-content {
+            flex: 1;
+            text-align: right;
+        }
+        .image-content img {
+            max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
+            max-height: 300px; /* Define uma altura máxima para a imagem */
+            width: auto; /* Mantém a proporção da imagem */
+        }
         /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .videos {
@@ -71,16 +92,28 @@
             }
             header {
                 flex-direction: column;
+                align-items: center;
+            }
+            header img {
+                margin-bottom: 10px;
             }
             .title-container {
-                position: static;
-                transform: none;
-                margin-top: 10px;
+                text-align: center;
+            }
+            .apresentacoes {
+                flex-direction: column;
+            }
+            .text-content {
+                padding-right: 0;
+                text-align: center;
+            }
+            .image-content {
+                text-align: center;
             }
         }
         @media (max-width: 576px) {
             header img {
-                max-height: 150px;
+                max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
             }
             .title-container h1 {
                 font-size: 1.5em;
@@ -147,6 +180,19 @@
             Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-title">Dom Cabron tocando no Rocket 88</div>
+    </div>
+    <section>
+
+    <section class="section apresentacoes">
+        <div class="text-content">
+            <h2>Próximas apresentações</h2>
+            <p>20/07 - Hoop Seekers (Itatiba).</p>
+            <p>27/07 - Quintal Caxambu (Jundiaí) .</p>
+            <p>17/08 - Rocket 88 (Jundiaí).</p>
+        </div>
+    
+    <div class="image-content">
+        <img src="foto_1.jpg" alt="Foto Divulgação">
     </div>
 </section>
 
