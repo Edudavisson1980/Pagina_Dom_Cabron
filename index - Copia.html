@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Cabron</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #00008B; /* Azul escuro */
+            color: white;
+        }
+        header img {
+            max-height: 100px; /* Aumentar o tamanho do logo */
+            margin-right: 20px;
+        }
+        .title-container {
+            flex-grow: 1;
+            text-align: center;
+        }
+        .title-container h1, .title-container h2 {
+            margin: 0;
+            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
+        }
+        .section {
+            padding: 20px;
+        }
+        .videos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .video {
+            flex: 1 1 200px;
+            margin: 10px;
+        }
+        .video-title {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .contact {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .apresentacoes {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .text-content {
+            flex: 1;
+            padding-right: 20px;
+        }
+        .text-content h2 {
+            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
+        }
+        .image-content {
+            flex: 1;
+            text-align: center;
+        }
+        .image-content img {
+            max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
+            max-height: 300px; /* Define uma altura máxima para a imagem */
+            width: auto; /* Mantém a proporção da imagem */
+        }
+        /* Media Queries for Responsiveness */
+        @media (max-width: 1200px) {
+            .videos {
+                justify-content: space-between;
+            }
+        }
+        @media (max-width: 992px) {
+            .video {
+                flex: 1 1 45%; /* Two videos per row */
+            }
+        }
+        @media (max-width: 768px) {
+            .video {
+                flex: 1 1 100%; /* One video per row */
+            }
+            header {
+                flex-direction: column;
+                align-items: center;
+            }
+            header img {
+                margin-bottom: 10px;
+            }
+            .title-container {
+                text-align: center;
+            }
+            .apresentacoes {
+                flex-direction: column;
+            }
+            .text-content {
+                padding-right: 0;
+                text-align: center;
+            }
+            .image-content {
+                text-align: center;
+            }
+        }
+        @media (max-width: 576px) {
+            header img {
+                max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
+            }
+            .title-container h1 {
+                font-size: 1.5em;
+            }
+            .title-container h2 {
+                font-size: 1.2em;
+            }
+            .section {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.jpg" alt="Logo">
+    <div class="title-container">
+        <h1>Dom Cabron</h1>
+        <h2>\0/ Rock Acústico \0/</h2> <!-- Subtítulo abaixo do título principal -->
+    </div>
+</header>
+
+
+<section class="section">
+    <p>
+        ====>  A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de batidas de violão flamenco  
+        como um toque especial para as músicas.
+    </p>
+    <p>
+        ====>  Criada em 2023 formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Eduardo
+        Davisson (Guitarra/Violão/Backing Vocal) usam um repertório bem seletivo com duração de 3hs em média tocando músicas de artistas como
+        Legião urbana , Barão Vermelho , Cássia Eller , Titãs , LS Jack , Jota Quest entre outros. Abaixo uma pequena demonstração de nosso 
+        trabalho com 4 vídeos de nossas apresentações que também podem ser conferidos no nosso instagram descrito abaixo.  
+        
+    </p>
+</section>
+
+<section class="section videos">
+    <div class="video">
+        <video controls width="100%">
+            <source src="video_1.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-title">Dom Cabron tocando em ensaio</div>
+    </div>
+    <div class="video">
+        <video controls width="100%">
+            <source src="video_2.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-title">Dom Cabron tocando no Mercadão da Ferroviários</div>
+    </div>
+    <div class="video">
+        <video controls width="100%">
+            <source src="video_3.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-title">Dom Cabron tocando no Lions em Vinhedo</div>
+    </div>
+    <div class="video">
+        <video controls width="100%">
+            <source src="video_4.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-title">Dom Cabron tocando no Rocket 88</div>
+    </div>
+    <section>
+
+    <section class="section apresentacoes">
+        <div class="text-content">
+            <h2>Próximas apresentações</h2>
+            <p>20/07 - Hoop Seekers (Itatiba).</p>
+            <p>27/07 - Quintal Caxambu (Jundiaí) .</p>
+            <p>17/08 - Rocket 88 (Jundiaí).</p>
+        </div>
+    
+    <div class="image-content">
+        <img src="foto_1.jpg" alt="Foto Divulgação">
+        <div class="image-title">Foto divulgação (flyer)</div>
+    </div>
+</section>
+
+<section class="section contact">
+    <h2>Contato para shows </h2>
+    <p>Whats app : (19) 99348-7941 (Eduardo)</p>
+    <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
+</section>
+
+</body>
+</html>
