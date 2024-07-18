@@ -84,7 +84,7 @@
         }
         
         .image-content img {
-            max-width: 40%; /* Ajusta a largura máxima da imagem para 30% */
+            max-width: 30%; /* Ajusta a largura máxima da imagem */
             height: auto; /* Mantém a proporção da imagem */
         }
         
@@ -111,8 +111,8 @@
         
         @media (max-width: 768px) {
             .video {
-                flex: 1 1 100%; /* Um vídeo por linha */
-                max-width: 100%; /* Ajustar a largura máxima para 100% */
+                flex: 1 1 48%; /* Ajustar para dois vídeos por linha em telas menores */
+                max-width: 48%; /* Ajustar a largura máxima para 48% */
             }
             header {
                 flex-direction: column;
@@ -137,6 +137,10 @@
         }
         
         @media (max-width: 576px) {
+            .video {
+                flex: 1 1 100%; /* Um vídeo por linha */
+                max-width: 100%; /* Ajustar a largura máxima para 100% */
+            }
             header img {
                 max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
             }
