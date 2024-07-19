@@ -40,55 +40,122 @@
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        
         .video {
-            flex: 1 1 200px;
+            flex: 1 1 150px; /* Reduzindo ainda mais o tamanho dos vídeos */
             margin: 10px;
+            max-width: 200px; /* Reduzindo a largura máxima dos vídeos */
         }
+        
+        .video video {
+            width: 100%;
+            height: auto;
+        }
+        
         .video-title {
             text-align: center;
             margin-top: 5px;
         }
+        
         .contact {
             background-color: #f4f4f4;
             padding: 20px;
         }
+        
         .apresentacoes {
             display: flex;
             align-items: center;
             padding: 20px;
             background-color: #f4f4f4;
         }
+        
         .text-content {
             flex: 1;
             padding-right: 20px;
         }
+        
         .text-content h2 {
             font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
         }
+        
         .image-content {
             flex: 1;
+            text-align: center; /* Centraliza o conteúdo da div */
+        }
+        
+        .image-content img {
+            max-width: 30%; /* Ajusta a largura máxima da imagem */
+            height: auto; /* Mantém a proporção da imagem */
+        }
+        
+        .image-title {
+            margin-top: 10px; /* Espaço entre a imagem e o título */
+            font-weight: bold; /* Torna o texto em negrito */
+            font-size: 1.1em; /* Aumenta o tamanho da fonte */
+            text-align: center; /* Centraliza o texto */
+        }
+
+        .image-content a {
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            color: #00008B; /* Cor do texto */
+            text-decoration: none; /* Remove o sublinhado */
+            font-weight: bold; /* Negrito */
+        }
+        .image-content a:hover {
+            text-decoration: underline; /* Sublinhado ao passar o mouse */
+        }
+        .comment-section {
+            padding: 20px;
+            background-color: #e0e0e0; /* Fundo cinza claro */
+        }
+        .comment-section h2 {
+            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
             text-align: center;
         }
-        .image-content img {
-            max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
-            height: auto; /* Mantém a proporção da imagem */
-            max-height: 300px; /* Define uma altura máxima para a imagem */
-            width: auto; /* Mantém a proporção da imagem */
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+        .comment-form input, .comment-form textarea, .comment-form select {
+            width: 100%;
+            max-width: 600px;
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1em;
+        }
+        .comment-form button {
+            padding: 10px 20px;
+            background-color: #00008B; /* Azul escuro */
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .comment-form button:hover {
+            background-color: #000060; /* Azul mais escuro */
+        }
+        
         /* Media Queries for Responsiveness */
         @media (max-width: 1200px) {
             .videos {
                 justify-content: space-between;
             }
         }
+        
         @media (max-width: 992px) {
             .video {
-                flex: 1 1 45%; /* Two videos per row */
+                flex: 1 1 40%; /* Dois vídeos por linha */
+                max-width: 40%; /* Ajustar a largura máxima para 40% */
             }
         }
+        
         @media (max-width: 768px) {
             .video {
-                flex: 1 1 100%; /* One video per row */
+                flex: 1 1 48%; /* Ajustar para dois vídeos por linha em telas menores */
+                max-width: 48%; /* Ajustar a largura máxima para 48% */
             }
             header {
                 flex-direction: column;
@@ -111,7 +178,12 @@
                 text-align: center;
             }
         }
+        
         @media (max-width: 576px) {
+            .video {
+                flex: 1 1 50%; /* Um vídeo por linha */
+                max-width: 50%; /* Ajustar a largura máxima para 100% */
+            }
             header img {
                 max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
             }
@@ -140,8 +212,8 @@
 
 <section class="section">
     <p>
-        ====>  A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de violão flamenco  
-        dando um toque especial para as músicas.
+        ====>  A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de batidas de violão flamenco  
+        como um toque especial para as músicas.
     </p>
     <p>
         ====>  Criada em 2023 formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Eduardo
@@ -158,50 +230,61 @@
             <source src="video_1.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div class="video-title">No ensaio</div>
+        <div class="video-title">Dom Cabron tocando em ensaio</div>
     </div>
     <div class="video">
         <video controls width="100%">
             <source src="video_2.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div class="video-title">Mercadão da Ferroviários</div>
+        <div class="video-title">Dom Cabron tocando no Mercadão da Ferroviários</div>
     </div>
     <div class="video">
         <video controls width="100%">
             <source src="video_3.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div class="video-title">Lions em Vinhedo</div>
+        <div class="video-title">Dom Cabron tocando no Lions em Vinhedo</div>
     </div>
     <div class="video">
         <video controls width="100%">
             <source src="video_4.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
-        <div class="video-title">Rocket 88</div>
+        <div class="video-title">Dom Cabron tocando no Rocket 88</div>
     </div>
     <section>
 
     <section class="section apresentacoes">
         <div class="text-content">
             <h2>Próximas apresentações</h2>
-            <p>20/07 - Hoop Seekers (Itatiba)</p>
-            <p>27/07 - Quintal Caxambu (Jundiaí)</p>
-            <p>03/08 - Evento fechado (Valinhos)</p>
-            <p>10/08 - Evento fechado (Campinas)</p>
-            <p>17/08 - Rocket 88 (Jundiaí)</p>
-            <p>24/08 - Point bar (Jundiaí)</p>
-            <p>14/09 - Lice Café (Jarinú)</p>
-
-
+            <p>20/07 - Hoop Seekers (Itatiba).</p>
+            <p>27/07 - Quintal Caxambu (Jundiaí) .</p>
+            <p>17/08 - Rocket 88 (Jundiaí).</p>
         </div>
     
         <div class="image-content">
             <img src="foto_1.jpg" alt="Imagem da apresentação">
-            <div class="image-title">Foto para divulgação</div>
-            <a href="foto_1.jpg" download="foto_1.jpg">Baixar foto</a> <!-- Link para download da imagem -->
+            <div class="image-title">Título da Imagem</div>
+            <a href="foto_1.jpg" download="foto_1.jpg">Download da Imagem</a> <!-- Link para download da imagem -->
         </div>
+</section>
+
+<section class="section comment-section">
+    <h2>Deixe seu Comentário Avaliativo</h2>
+    <form class="comment-form">
+        <input type="text" name="name" placeholder="Seu Nome" required>
+        <textarea name="comment" rows="4" placeholder="Seu Comentário" required></textarea>
+        <select name="rating" required>
+            <option value="">Selecione a Avaliação</option>
+            <option value="5">5 - Excelente</option>
+            <option value="4">4 - Muito Bom</option>
+            <option value="3">3 - Bom</option>
+            <option value="2">2 - Regular</option>
+            <option value="1">1 - Ruim</option>
+        </select>
+        <button type="submit">Enviar</button>
+    </form>
 </section>
 
 <section class="section contact">
