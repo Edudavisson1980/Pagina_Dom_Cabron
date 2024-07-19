@@ -75,57 +75,63 @@
             max-height: 300px; /* Define uma altura máxima para a imagem */
             width: auto; /* Mantém a proporção da imagem */
         }
-        /* Media Queries for Responsiveness */
-        @media (max-width: 1200px) {
-            .videos {
-                justify-content: space-between;
-            }
+       /* Media Queries for Responsiveness */
+       @media (max-width: 1200px) {
+        .videos {
+            justify-content: space-between;
         }
-        @media (max-width: 992px) {
-            .video {
-                flex: 1 1 45%; /* Two videos per row */
-            }
+    }
+    @media (max-width: 992px) {
+        .video {
+            flex: 1 1 40%; /* Dois vídeos por linha */
+            max-width: 40%; /* Ajustar a largura máxima para 40% */
         }
-        @media (max-width: 768px) {
-            .video {
-                flex: 1 1 100%; /* One video per row */
-            }
-            header {
-                flex-direction: column;
-                align-items: center;
-            }
-            header img {
-                margin-bottom: 10px;
-            }
-            .title-container {
-                text-align: center;
-            }
-            .apresentacoes {
-                flex-direction: column;
-            }
-            .text-content {
-                padding-right: 0;
-                text-align: center;
-            }
-            .image-content {
-                text-align: center;
-            }
+    }
+    @media (max-width: 768px) {
+        .video {
+            flex: 1 1 48%; /* Ajustar para dois vídeos por linha em telas menores */
+            max-width: 48%; /* Ajustar a largura máxima para 48% */
         }
-        @media (max-width: 576px) {
-            header img {
-                max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
-            }
-            .title-container h1 {
-                font-size: 1.5em;
-            }
-            .title-container h2 {
-                font-size: 1.2em;
-            }
-            .section {
-                padding: 10px;
-            }
+        header {
+            flex-direction: column;
+            align-items: center;
         }
-    </style>
+        header img {
+            margin-bottom: 10px;
+        }
+        .title-container {
+            text-align: center;
+        }
+        .apresentacoes {
+            flex-direction: column;
+        }
+        .text-content {
+            padding-right: 0;
+            text-align: center;
+        }
+        .image-content {
+            text-align: center;
+        }
+    }
+    @media (max-width: 576px) {
+        .video {
+            flex: 1 1 100%; /* Um vídeo por linha */
+            max-width: 100%; /* Ajustar a largura máxima para 100% */
+        }
+        header img {
+            max-height: 80px; /* Aumentar o tamanho do logo para telas menores */
+        }
+        .title-container h1 {
+            font-size: 1.5em;
+        }
+        .title-container h2 {
+            font-size: 1.2em;
+        }
+        .section {
+            padding: 10px;
+        }
+    }
+</style>
 </head>
 <body>
 
