@@ -75,7 +75,21 @@
             max-height: 300px; /* Define uma altura máxima para a imagem */
             width: auto; /* Mantém a proporção da imagem */
         }
-       /* Media Queries for Responsiveness */
+       
+        .image-content_2 {
+            flex: 1;
+            text-align: center;
+        }
+        .image-content_2 img {
+            max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+            height: auto; /* Mantém a proporção da imagem */
+            max-height: 300px; /* Define uma altura máxima para a imagem */
+            width: auto; /* Mantém a proporção da imagem */
+        }
+       
+       
+       
+        /* Media Queries for Responsiveness */
        @media (max-width: 1200px) {
         .videos {
             justify-content: space-between;
@@ -207,6 +221,14 @@
             <div class="image-title">Foto para divulgação</div>
             <a href="foto_1.jpg" download="foto_1.jpg">Baixar foto</a> <!-- Link para download da imagem -->
         </div>
+
+        <div class="image-content_2">
+            <img src="logo.jpg" alt="Imagem da apresentação">
+            <div class="image-title_2">Foto do logo</div>
+            <a href="logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
+        </div>
+
+        
 </section>
 
 <section class="section contact">
