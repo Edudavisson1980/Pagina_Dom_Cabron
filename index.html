@@ -41,7 +41,7 @@
             flex-wrap: wrap;
         }
         .video {
-            flex: 1 1 200px;
+            flex: 1 1 100px;
             margin: 10px;
         }
         .video-title {
@@ -87,9 +87,21 @@
             width: auto; /* Mantém a proporção da imagem */
         }
        
-       
-       
-        /* Media Queries for Responsiveness */
+        .video-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: #e0e0e0;
+        }
+        
+        .video {
+            width: 100%;
+            max-width: 200px; /* Ajuste o tamanho máximo conforme necessário */
+            margin-bottom: 20px;
+        }
+        
+                /* Media Queries for Responsiveness */
        @media (max-width: 1200px) {
         .videos {
             justify-content: space-between;
