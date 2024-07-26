@@ -6,6 +6,7 @@
     <title>Dom Cabron</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -83,7 +84,7 @@
         .image-content_2 img {
             max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
             height: auto; /* Mantém a proporção da imagem */
-            max-height: 200px; /* Define uma altura máxima para a imagem */
+            max-height: 250px; /* Define uma altura máxima para a imagem */
             width: auto; /* Mantém a proporção da imagem */
         }
        
@@ -99,6 +100,12 @@
             width: 100%;
             max-width: 200px; /* Ajuste o tamanho máximo conforme necessário */
             margin-bottom: 20px;
+        }
+
+        .texto {
+            font-family: 'Playwrite', cursive; /* Aplicar fonte Rock Salt ao título */
+            font-size: 20px;
+           
         }
         
                 /* Media Queries for Responsiveness */
@@ -141,8 +148,8 @@
     }
     @media (max-width: 576px) {
         .video {
-            flex: 1 1 100%; /* Um vídeo por linha */
-            max-width: 100%; /* Ajustar a largura máxima para 100% */
+            flex: 2 1 40%; /* Um vídeo por linha */
+            max-width: 40%; /* Ajustar a largura máxima para 100% */
         }
         header img {
             max-height: 160px; /* Aumentar o tamanho do logo para telas menores */
@@ -156,6 +163,9 @@
         .section {
             padding: 10px;
         }
+        .titulo {
+            text-align:center
+        }   
 
     }
 </style>
@@ -172,17 +182,19 @@
 
 
 <section class="section">
+    <div class="texto">
     <p>
-        ====>  A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de violão flamenco  
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de violão flamenco  
         dando um toque especial para as músicas.
     </p>
     <p>
-        ====>  Criada em 2023 formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Eduardo
+        &nbsp;&nbsp;&nbsp;&nbsp;Criada em 2023 formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Eduardo
         Davisson (Guitarra/Violão/Backing Vocal) usam um repertório bem seletivo com duração de 3hs em média tocando músicas de artistas como
         Legião urbana , Barão Vermelho , Cássia Eller , Titãs , LS Jack , Jota Quest entre outros. Abaixo uma pequena demonstração de nosso 
         trabalho com 4 vídeos de nossas apresentações que também podem ser conferidos no nosso instagram descrito abaixo.  
         
     </p>
+    </div>
 </section>
 
 <section class="section videos">
@@ -245,7 +257,9 @@
 </section>
 
 <section class="section contact">
-    <h2>Contato para shows </h2>
+    <div class="titulo">    
+        <h2>Contato para shows </h2>
+    </div>
     <p>Whats app : (19) 99348-7941 (Eduardo)</p>
     <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
 </section>
