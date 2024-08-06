@@ -15,15 +15,23 @@
             padding: 0;
         }
         header {
+            position: relative;
+            width: 100%;
+            height: calc(150px + 40px * 2); /* Ajusta a altura total da seção com base na altura do logo e margem */
+            background: url('Azul.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
-            padding: 20px;
-            background-color: #00008B; /* Azul escuro */
-            color: white;
+            justify-content: center;
+            padding-top: 40px; /* Margem superior em relação ao logo */
+            padding-bottom: 40px; /* Margem inferior em relação ao logo */
         }
+        
+        
         header img {
             max-height: 200px; /* Aumentar o tamanho do logo */
             margin-right: 20px;
+            margin-left: 40px;
+
         }
         .title-container {
             flex-grow: 1;
@@ -32,6 +40,7 @@
         .title-container h1, .title-container h2 {
             margin: 0;
             font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
+            color: #f4f4f4;
         }
         .section {
             padding: 20px;
@@ -42,7 +51,7 @@
             flex-wrap: wrap;
         }
         .video {
-            flex: 1 1 200px;
+            flex: 1 1 100px;
             margin: 10px;
         }
         .video-title {
@@ -61,7 +70,7 @@
         }
         .text-content {
             flex: 1;
-            padding-right: 50px;
+            padding-right: 20px;
         }
         .text-content h2 {
             font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
