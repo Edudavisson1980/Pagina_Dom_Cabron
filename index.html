@@ -116,7 +116,154 @@
             font-size: 23px;
            
         }
+
+
+        // ESTILIZAÇÃO DE FORMULARIO
+
+        .feedback form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feedback .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .feedback label {
+            margin-top: 10px;
+        }
+
+        .feedback input, .feedback textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 18px
+        }
+
+        .feedback .form-row input {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .feedback textarea {
+            margin-top: 10px;
+            width: 100%;
+            height: 100px;
+        }
+
+        .feedback button {
+            margin-top: 10px;
+            padding: 10px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .feedback button:hover {
+            background-color: #555;
+        }
+
+        .comment {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+
+        }
+
+        .titulo-form {
+            text-align: center; /* Centraliza o texto do título */
+        }
+
+        .data {
+            text-align: center;
+            color: white
+        }
+
+        .nome {
+            text-align: center;
+            color: white
+        }
+
+        .cidade {
+            text-align: center;
+            color: white
+        }
+
+        .comentario {
+            text-align: center;
+            color: white
+        }
+
         
+
+
+        // ESTILIZAÇÃO DO FORMULARIO 
+
+        section#feedbackSection {
+            background-image: url('Azul.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        form {
+            background-image: url('Azul.jpg');
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+            form label {
+                display: block;
+                margin-top: 10px;
+            }
+
+            form input, form textarea {
+                width: calc(100% - 20px); /* Ajusta o tamanho do campo com base no padding do formulário */
+                padding: 10px;
+                margin-top: 5px;
+                border: none;
+                border-radius: 5px;
+                box-sizing: border-box;
+                font-size: 16px;
+            }
+
+            form button {
+                margin-top: 10px;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 5px;
+                background-color: #333;
+                color: white;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+                form button:hover {
+                    background-color: #555;
+                }
+
+        .comment {
+            background-image: url('Azul.jpg');
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            color: white;
+        }
+      
+
+
                 /* Media Queries for Responsiveness */
        @media (max-width: 1200px) {
         .videos {
@@ -154,29 +301,50 @@
         .image-content {
             text-align: center;
         }
-    }
-    @media (max-width: 576px) {
-        .video {
-            flex: 2 1 40%; /* Um vídeo por linha */
-            max-width: 40%; /* Ajustar a largura máxima para 100% */
-        }
-        header img {
-            max-height: 160px; /* Aumentar o tamanho do logo para telas menores */
-        }
-        .title-container h1 {
-            font-size: 1.5em;
-        }
-        .title-container h2 {
-            font-size: 1.2em;
-        }
-        .section {
-            padding: 10px;
-        }
-        .titulo {
-            text-align:center
-        }   
 
-    }
+               
+
+
+        @media (max-width: 576px) {
+            .video {
+                flex: 2 1 40%; /* Um vídeo por linha */
+                max-width: 40%; /* Ajustar a largura máxima para 100% */
+            }
+
+            header img {
+                max-height: 160px; /* Aumentar o tamanho do logo para telas menores */
+            }
+
+            .title-container h1 {
+                font-size: 1.5em;
+            }
+
+            .title-container h2 {
+                font-size: 1.2em;
+            }
+
+            .section {
+                padding: 10px;
+            }
+
+            .titulo {
+                text-align: center
+            }
+
+            .feedback {
+                background-color: #f4f4f4;
+                padding: 20px;
+                border-radius: 5px;
+                margin-top: 20px;
+            }
+
+            .feedback h2 {
+                font-family: 'Rock Salt', cursive;
+                color: #333;
+            }
+
+            
+        }
 </style>
 </head>
 <body>
@@ -237,40 +405,148 @@
     </div>
     <section>
 
-    <section class="section apresentacoes">
-        <div class="text-content">
-            <h2>Próximas apresentações</h2>
-            <p>10/08 - Evento fechado (Campinas)</p>
-            <p>17/08 - Rocket 88 (Jundiaí)</p>
-            <p>24/08 - Point bar (Jundiaí)</p>
-            <p>14/09 - Lice Café (Jarinú)</p>
-            <p>12/10 - Hop Seekers (Itatiba)</p>
+        <section class="section apresentacoes">
+            <div class="text-content">
+                <h2>Próximas apresentações</h2>
+                <p>10/08 - Evento fechado (Campinas)</p>
+                <p>17/08 - Rocket 88 (Jundiaí)</p>
+                <p>24/08 - Point bar (Jundiaí)</p>
+                <p>14/09 - Lice Café (Jarinú)</p>
+                <p>12/10 - Hop Seekers (Itatiba)</p>
 
 
-        </div>
-    
-        <div class="image-content">
-            <img src="foto_1.jpg" alt="Imagem da apresentação">
-            <div class="image-title">Foto para divulgação</div>
-            <a href="foto_1.jpg" download="foto_1.jpg">Baixar foto</a> <!-- Link para download da imagem -->
-        </div>
+            </div>
 
-        <div class="image-content_2">
-            <img src="logo.jpg" alt="Imagem da apresentação">
-            <div class="image-title_2">Foto do logo</div>
-            <a href="logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
-        </div>
+            <div class="image-content">
+                <img src="foto_1.jpg" alt="Imagem da apresentação">
+                <div class="image-title">Foto para divulgação</div>
+                <a href="foto_1.jpg" download="foto_1.jpg">Baixar foto</a> <!-- Link para download da imagem -->
+            </div>
 
-        
-</section>
+            <div class="image-content_2">
+                <img src="logo.jpg" alt="Imagem da apresentação">
+                <div class="image-title_2">Foto do logo</div>
+                <a href="logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
+            </div>
 
-<section class="section contact">
-    <div class="titulo">    
-        <h2>Contato para shows </h2>
-    </div>
-    <p>Whats app : (19) 99348-7941 (Eduardo)</p>
-    <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
-</section>
+
+        </section>
+
+        <section class="section contact">
+            <div class="titulo">
+                <h2>Contato para shows </h2>
+            </div>
+            <p>Whats app : (19) 99348-7941 (Eduardo)</p>
+            <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
+        </section>
+
+        <!-- FORMULARIO JAVASCRIPT -->
+
+        <section class="section feedback">
+            
+            <div class="titulo-form">
+            <h2>Você , contratante ou público , o que achou do nosso som? Sua opinião é muito importante para a dupla \o/</h2>
+            </div>
+            
+            <form id="feedbackForm">
+                <div class="form-row">
+                    <div class="data">
+                        <label for="date">Data:</label>
+                        <input type="text" id="date" name="date" readonly size="8">
+                    </div>
+                    <div class="nome">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name" name="name" required size="50">
+                    </div>
+                    <div class="cidade">
+                        <label for="city">Cidade:</label>
+                        <input type="text" id="city" name="city" required size="20">
+                    </div>
+                </div>
+                <div class="comentario">
+                    <label for="comment">Comentário:</label>
+                </div>
+
+                <textarea id="comment" name="comment" required></textarea><br>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <h3>Comentários</h3>
+            <div id="commentsSection">
+                <!-- Comentários serão exibidos aqui -->
+            </div>
+        </section>
+
+        <!-- FORMULARIO JAVASCRIPT -->
+        <script>
+            // Preenche a data automaticamente
+            document.getElementById('date').value = new Date().toLocaleDateString();
+
+            // Função para carregar comentários do localStorage
+            function loadComments() {
+                const commentsSection = document.getElementById('commentsSection');
+                commentsSection.innerHTML = '';
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.forEach((comment, index) => {
+                    const commentElement = document.createElement('div');
+                    commentElement.classList.add('comment');
+                    commentElement.innerHTML = `
+                <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
+                <p>${comment.comment}</p>
+                ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
+            `;
+                    commentsSection.appendChild(commentElement);
+                });
+            }
+
+            // Função para excluir um comentário
+            function deleteComment(index) {
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.splice(index, 1);
+                localStorage.setItem('comments', JSON.stringify(comments));
+                loadComments();
+            }
+
+            // Carrega comentários ao carregar a página
+            window.onload = loadComments;
+
+            // Manipula o envio do formulário
+            document.getElementById('feedbackForm').addEventListener('submit', function (event) {
+                event.preventDefault(); // Impede o envio do formulário
+
+                // Obtém os valores dos campos
+                var date = document.getElementById('date').value;
+                var name = document.getElementById('name').value;
+                var city = document.getElementById('city').value;
+                var comment = document.getElementById('comment').value;
+
+                // Salva o nome do usuário atual no localStorage
+                localStorage.setItem('currentUser', name);
+
+                // Cria o objeto de comentário
+                const newComment = {
+                    date: date,
+                    name: name,
+                    city: city,
+                    comment: comment
+                };
+
+                // Salva o comentário no localStorage
+                const comments = JSON.parse(localStorage.getItem('comments')) || [];
+                comments.push(newComment);
+                localStorage.setItem('comments', JSON.stringify(comments));
+
+                // Adiciona o comentário à seção de comentários
+                loadComments();
+
+                // Limpa os campos do formulário
+                document.getElementById('feedbackForm').reset();
+                document.getElementById('date').value = new Date().toLocaleDateString();
+            });
+
+        </script>
+
+
 
 </body>
 </html>
