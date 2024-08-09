@@ -294,6 +294,11 @@
                     object-fit: contain;
                 }
 
+        .visitas {
+            
+            font-weight: bold;
+        }
+
 
                 /* Media Queries for Responsiveness */
        @media (max-width: 1200px) {
@@ -443,16 +448,23 @@
     <section>
 
 
-    <section class="photo-gallery">
-        <h2>Mural de Fotos</h2>
-        <div class="gallery">
-            <img src="Foto_1.jpg" alt="Foto 1">
-            <img src="Foto_2.jpg" alt="Foto 2">
-            <img src="Foto_3.jpg" alt="Foto 3">
-            <img src="Foto_4.jpg" alt="Foto 4">
-            <!-- Adicione mais fotos aqui -->
-        </div>
-     </section>
+        <section class="photo-gallery">
+            <h2>Mural de Fotos</h2>
+            <div class="gallery">
+                <img src="Mural/Foto_1.jpg" alt="Foto 1">
+                <img src="Mural/Foto_2.jpg" alt="Foto 2">
+                <img src="Mural/Foto_3.jpg" alt="Foto 3">
+                <img src="Mural/Foto_4.jpg" alt="Foto 4">
+                <img src="Mural/Foto_5.jpg" alt="Foto 5">
+                <img src="Mural/Foto_6.jpg" alt="Foto 6">
+                <img src="Mural/Foto_7.jpg" alt="Foto 7">
+                <img src="Mural/Foto_8.jpg" alt="Foto 8">
+                
+
+
+                <!-- Adicione mais fotos aqui -->
+            </div>
+        </section>
 
         <section class="section apresentacoes">
             <div class="text-content">
@@ -479,6 +491,9 @@
             </div>
 
 
+
+
+
         </section>
 
         <section class="section contact">
@@ -488,6 +503,7 @@
             <p>Whats app : (19) 99348-7941 (Eduardo)</p>
             <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
         </section>
+
 
         <!-- FORMULARIO JAVASCRIPT -->
 
@@ -540,10 +556,10 @@
                     const commentElement = document.createElement('div');
                     commentElement.classList.add('comment');
                     commentElement.innerHTML = `
-                                        <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
-                                        <p>${comment.comment}</p>
-                                        ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
-                                    `;
+                                                        <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
+                                                        <p>${comment.comment}</p>
+                                                        ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
+                                                    `;
                     commentsSection.appendChild(commentElement);
                 });
             }
@@ -593,7 +609,28 @@
                 document.getElementById('date').value = new Date().toLocaleDateString();
             });
 
-        </script>
+
+            // Verifica se há contagem armazenada no Local Storage
+            let visitCount = localStorage.getItem('visitCount');
+
+            if (visitCount) {
+                visitCount = parseInt(visitCount) + 1;
+            } else {
+                visitCount = 1;
+            }
+
+            // Atualiza o contador no Local Storage
+            localStorage.setItem('visitCount', visitCount);
+
+            // Mostra o contador na página
+            document.getElementById('visit-count').textContent = visitCount;
+
+
+        </script>   
+        <div class="visitas"
+        <p>Visitas nessa página: <span id="visit-count">0</span> vezes.</p>
+        </div>
+        
 
 
 
