@@ -294,10 +294,7 @@
                     object-fit: contain;
                 }
 
-        .visitas {
-            
-            font-weight: bold;
-        }
+        
 
 
                 /* Media Queries for Responsiveness */
@@ -451,15 +448,24 @@
         <section class="photo-gallery">
             <h2>Mural de Fotos</h2>
             <div class="gallery">
-                <img src="Foto_1.jpg" alt="Foto 1">
-                <img src="Foto_2.jpg" alt="Foto 2">
-                <img src="Foto_3.jpg" alt="Foto 3">
-                <img src="Foto_4.jpg" alt="Foto 4">
-                <img src="Foto_5.jpg" alt="Foto 5">
-                <img src="Foto_6.jpg" alt="Foto 6">
-                <img src="Foto_7.jpg" alt="Foto 7">
-                <img src="Foto_8.jpg" alt="Foto 8">
-                
+                <img src="Mural/Foto_1.jpg" alt="Foto 1">
+                <img src="Mural/Foto_2.jpg" alt="Foto 2">
+                <img src="Mural/Foto_3.jpg" alt="Foto 3">
+                <img src="Mural/Foto_4.jpg" alt="Foto 4">
+                <img src="Mural/Foto_5.jpg" alt="Foto 5">
+                <img src="Mural/Foto_6.jpg" alt="Foto 6">
+                <img src="Mural/Foto_7.jpg" alt="Foto 7">
+                <img src="Mural/Foto_8.jpg" alt="Foto 8">
+                <img src="Mural/Foto_9.jpg" alt="Foto 8">
+                <img src="Mural/Foto_10.jpg" alt="Foto 8">
+                <img src="Mural/Foto_11.jpg" alt="Foto 8">
+                <img src="Mural/Foto_12.jpg" alt="Foto 8">
+                <img src="Mural/Foto_13.jpg" alt="Foto 8">
+                <img src="Mural/Foto_14.jpg" alt="Foto 8">
+                <img src="Mural/Foto_15.jpg" alt="Foto 8">
+                <img src="Mural/Foto_16.jpg" alt="Foto 8">
+                <img src="Mural/Foto_17.jpg" alt="Foto 8">
+                <img src="Mural/Foto_18.jpg" alt="Foto 8">
 
 
                 <!-- Adicione mais fotos aqui -->
@@ -492,8 +498,6 @@
 
 
 
-
-
         </section>
 
         <section class="section contact">
@@ -505,6 +509,8 @@
         </section>
 
         
+
+
         <!-- FORMULARIO JAVASCRIPT -->
 
         <section class="section feedback">
@@ -556,10 +562,10 @@
                     const commentElement = document.createElement('div');
                     commentElement.classList.add('comment');
                     commentElement.innerHTML = `
-                                                        <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
-                                                        <p>${comment.comment}</p>
-                                                        ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
-                                                    `;
+                                                                <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
+                                                                <p>${comment.comment}</p>
+                                                                ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
+                                                            `;
                     commentsSection.appendChild(commentElement);
                 });
             }
@@ -610,8 +616,12 @@
             });
 
 
-            </script>   
-        
+           
+
+
+        </script>
+
+
 
 
 
