@@ -504,11 +504,7 @@
             <p>Instagram: <a href="https://instagram.com/acusticodomcabron" target="_blank">@acusticodomcabron</a></p>
         </section>
 
-        <div class="visitas"
-         <p>Visitas nessa página: <span id="visit-count">0</span> </p>
-        </div>
-
-
+        
         <!-- FORMULARIO JAVASCRIPT -->
 
         <section class="section feedback">
@@ -614,23 +610,7 @@
             });
 
 
-            // Verifica se há contagem armazenada no Local Storage
-            let visitCount = localStorage.getItem('visitCount');
-
-            if (visitCount) {
-                visitCount = parseInt(visitCount) + 1;
-            } else {
-                visitCount = 1;
-            }
-
-            // Atualiza o contador no Local Storage
-            localStorage.setItem('visitCount', visitCount);
-
-            // Mostra o contador na página
-            document.getElementById('visit-count').textContent = visitCount;
-
-
-        </script>   
+            </script>   
         
 
 
