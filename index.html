@@ -261,7 +261,38 @@
             margin-top: 10px;
             color: white;
         }
-      
+
+
+        .photo-gallery {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .photo-gallery h2 {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+        }
+
+            .gallery img {
+                width: 100%;
+                height: 100px;
+                object-fit: cover;
+                border-radius: 8px;
+                transition: transform 0.2s;
+            }
+
+                .gallery img:hover {
+                    transform: scale(2.05);
+                    object-fit: contain;
+                }
 
 
                 /* Media Queries for Responsiveness */
@@ -411,6 +442,18 @@
     </div>
     <section>
 
+
+    <section class="photo-gallery">
+        <h2>Mural de Fotos</h2>
+        <div class="gallery">
+            <img src="Mural/foto_1.jpg" alt="Foto 1">
+            <img src="Mural/foto_2.jpg" alt="Foto 2">
+            <img src="Mural/foto_3.jpg" alt="Foto 3">
+            <img src="Mural/foto_4.jpg" alt="Foto 4">
+            <!-- Adicione mais fotos aqui -->
+        </div>
+     </section>
+
         <section class="section apresentacoes">
             <div class="text-content">
                 <h2>Próximas apresentações</h2>
@@ -449,11 +492,11 @@
         <!-- FORMULARIO JAVASCRIPT -->
 
         <section class="section feedback">
-            
+
             <div class="titulo-form">
-            <h2>Você , contratante ou público , o que achou do nosso som? Sua opinião é muito importante para a dupla \o/</h2>
+                <h2>Você , contratante ou público , o que achou do nosso som? Sua opinião é muito importante para a dupla \o/</h2>
             </div>
-            
+
             <form id="feedbackForm">
                 <div class="form-row">
                     <div class="data">
@@ -497,10 +540,10 @@
                     const commentElement = document.createElement('div');
                     commentElement.classList.add('comment');
                     commentElement.innerHTML = `
-                <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
-                <p>${comment.comment}</p>
-                ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
-            `;
+                                        <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
+                                        <p>${comment.comment}</p>
+                                        ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
+                                    `;
                     commentsSection.appendChild(commentElement);
                 });
             }
