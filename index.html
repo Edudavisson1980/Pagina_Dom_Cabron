@@ -7,6 +7,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
     
     <style>
         body {
@@ -120,7 +123,6 @@
            
         }
 
-
         // ESTILIZAÇÃO DE FORMULARIO
 
         .feedback form {
@@ -206,7 +208,6 @@
 
         
 
-
         // ESTILIZAÇÃO DO FORMULARIO 
 
         section#feedbackSection {
@@ -265,7 +266,6 @@
             color: white;
         }
 
-
         .photo-gallery {
             max-width: 1000px;
             margin: 0 auto;
@@ -298,7 +298,6 @@
                 }
 
         
-
 
                 /* Media Queries for Responsiveness */
        @media (max-width: 1200px) {
@@ -343,7 +342,6 @@
         }
 
                
-
 
         @media (max-width: 576px) {
             .video {
@@ -403,7 +401,6 @@
     </div>
 </header>
 
-
 <section class="section">
     <div class="texto">
     <p>
@@ -459,7 +456,6 @@
     </div>
     <section>
 
-
         <section class="photo-gallery">
             <h2>Mural de Fotos</h2>
             <div class="gallery">
@@ -488,7 +484,6 @@
                 <img src="Mural/Foto_23.jpg" alt="Foto 23">
                 <img src="Mural/Foto_24.jpg" alt="Foto 24">
 
-
                 <!-- Adicione mais fotos aqui -->
             </div>
         </section>
@@ -506,9 +501,7 @@
                 <h3> 2025</h3>
                 <p>04/01 - Kremer (Jundiaí)</p>
 
-
             </div>
-
 
                 <div class="image-content">
                     <img src="foto_1.jpg" alt="Imagem da apresentação">
@@ -523,7 +516,6 @@
                 </div>
 
 
-
         </section>
 
         <section class="section contact">
@@ -535,7 +527,6 @@
         </section>
 
         
-
 
         <!-- FORMULARIO JAVASCRIPT -->
 
@@ -549,7 +540,7 @@
                 <div class="form-row">
                     <div class="data">
                         <label for="date">Data:</label>
-                        <input type="text" id="date" name="date" readonly size="8">
+                        <input type="text" id="date" name="date" />
                     </div>
                     <div class="nome">
                         <label for="name">Nome:</label>
@@ -576,80 +567,67 @@
 
         <!-- FORMULARIO JAVASCRIPT -->
         <script>
-            // Preenche a data automaticamente
-            document.getElementById('date').value = new Date().toLocaleDateString();
+            // Configuração do Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyAItnN6k046cLMsWAxSrCrkV9yyLklMFrI",
+        authDomain: "formulario-dom-cabron.firebaseapp.com",
+        databaseURL: "https://formulario-dom-cabron-default-rtdb.firebaseio.com",
+        projectId: "formulario-dom-cabron",
+        storageBucket: "formulario-dom-cabron.appspot.com",
+        messagingSenderId: "583969099203",
+        appId: "1:583969099203:web:17b8ce2f39ba3fa0c0c176"
+    };
 
-            // Função para carregar comentários do localStorage
-            function loadComments() {
-                const commentsSection = document.getElementById('commentsSection');
-                commentsSection.innerHTML = '';
-                const comments = JSON.parse(localStorage.getItem('comments')) || [];
-                comments.forEach((comment, index) => {
-                    const commentElement = document.createElement('div');
-                    commentElement.classList.add('comment');
-                    commentElement.innerHTML = `
-                                                                <strong>${comment.name} (${comment.city}) - ${comment.date}:</strong>
-                                                                <p>${comment.comment}</p>
-                                                                ${comment.name === localStorage.getItem('currentUser') ? `<button onclick="deleteComment(${index})">Excluir</button>` : ''}
-                                                            `;
-                    commentsSection.appendChild(commentElement);
-                });
+    // Inicializar Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database();
+
+    // Manipular envio do formulário
+
+    document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("date").value = new Date().toLocaleString();
+    });
+
+    document.getElementById("feedbackForm").addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const city = document.getElementById("city").value.trim();
+        const comment = document.getElementById("comment").value.trim();
+        const date = new Date().toLocaleString();
+
+        if (name && city && comment) {
+            try {
+                // Envia os dados ao Firebase
+                await db.ref("comments/").push({ name, city, comment, date });
+                alert("Comentário enviado com sucesso!");
+                document.getElementById("feedbackForm").reset();
+            } catch (error) {
+                console.error("Erro ao enviar comentário:", error);
+                alert("Não foi possível enviar o comentário. Tente novamente.");
             }
+        } else {
+            alert("Por favor, preencha todos os campos!");
+        }
+    });
 
-            // Função para excluir um comentário
-            function deleteComment(index) {
-                const comments = JSON.parse(localStorage.getItem('comments')) || [];
-                comments.splice(index, 1);
-                localStorage.setItem('comments', JSON.stringify(comments));
-                loadComments();
-            }
-
-            // Carrega comentários ao carregar a página
-            window.onload = loadComments;
-
-            // Manipula o envio do formulário
-            document.getElementById('feedbackForm').addEventListener('submit', function (event) {
-                event.preventDefault(); // Impede o envio do formulário
-
-                // Obtém os valores dos campos
-                var date = document.getElementById('date').value;
-                var name = document.getElementById('name').value;
-                var city = document.getElementById('city').value;
-                var comment = document.getElementById('comment').value;
-
-                // Salva o nome do usuário atual no localStorage
-                localStorage.setItem('currentUser', name);
-
-                // Cria o objeto de comentário
-                const newComment = {
-                    date: date,
-                    name: name,
-                    city: city,
-                    comment: comment
-                };
-
-                // Salva o comentário no localStorage
-                const comments = JSON.parse(localStorage.getItem('comments')) || [];
-                comments.push(newComment);
-                localStorage.setItem('comments', JSON.stringify(comments));
-
-                // Adiciona o comentário à seção de comentários
-                loadComments();
-
-                // Limpa os campos do formulário
-                document.getElementById('feedbackForm').reset();
-                document.getElementById('date').value = new Date().toLocaleDateString();
-            });
-
-
-           
-
+    // Exibir comentários
+    const commentsSection = document.getElementById("commentsSection");
+    db.ref("comments/").on("value", (snapshot) => {
+        commentsSection.innerHTML = ""; // Limpa os comentários
+        snapshot.forEach((childSnapshot) => {
+            const comment = childSnapshot.val();
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <strong>${comment.date} - ${comment.name} (${comment.city}):</strong>
+                <p>${comment.comment}</p>
+            `;
+            commentsSection.appendChild(li);
+        });	
+    });
+         
 
         </script>
-
-
-
-
 
 </body>
 </html>
