@@ -409,6 +409,8 @@
         <h1>Dom Cabron</h1>
         <h2>\0/ Rock Acústico \0/</h2> <!-- Subtítulo abaixo do título principal -->
     </div>
+
+    
 </header>
 
 <section class="section">
@@ -575,6 +577,10 @@
             <div id="commentsSection">
                 <!-- Comentários serão exibidos aqui -->
             </div>
+            
+            <div id="counter">Carregando visitas...
+            </div>    
+        
         </section>
 
         <footer style="text-align: center; padding: 10px; background-color: #f1f1f1; margin-top: 20px;">
@@ -642,6 +648,25 @@
         });	
     });
          
+
+    // Referência ao contador no banco de dados
+const visitsRef = db.ref("visits");
+
+// Incrementar e exibir contador
+async function updateVisitCounter() {
+    try {
+        const snapshot = await visitsRef.transaction((currentValue) => {
+            return (currentValue || 0) + 1; // Incrementa o contador
+        });
+        document.getElementById("counter").innerText = `Visitas: ${snapshot.snapshot.val()}`;
+    } catch (error) {
+        console.error("Erro ao atualizar contador de visitas:", error);
+        document.getElementById("counter").innerText = "Erro ao carregar visitas.";
+    }
+}
+
+// Chamar a função ao carregar a página
+updateVisitCounter();
 
         </script>
 
