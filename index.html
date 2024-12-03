@@ -577,14 +577,16 @@
             <div id="commentsSection">
                 <!-- Comentários serão exibidos aqui -->
             </div>
-            
+
             <div id="counter">Carregando visitas...
-            </div>    
-        
+            </div> 
+
+                     
         </section>
 
         <footer style="text-align: center; padding: 10px; background-color: #f1f1f1; margin-top: 20px;">
             <b>Desenvolvido por Eduardo Davisson Evangelista</b>
+                       
         </footer>
 
         <!-- FORMULARIO JAVASCRIPT -->
@@ -658,7 +660,7 @@ async function updateVisitCounter() {
         const snapshot = await visitsRef.transaction((currentValue) => {
             return (currentValue || 0) + 1; // Incrementa o contador
         });
-        document.getElementById("counter").innerText = `Visitas: ${snapshot.snapshot.val()}`;
+        document.getElementById("counter").innerHTML = `<strong>Visitas: ${snapshot.snapshot.val()}</strong>`;
     } catch (error) {
         console.error("Erro ao atualizar contador de visitas:", error);
         document.getElementById("counter").innerText = "Erro ao carregar visitas.";
