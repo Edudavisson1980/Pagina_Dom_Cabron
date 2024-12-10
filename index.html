@@ -684,6 +684,35 @@ async function updateVisitCounter() {
 // Chamar a função ao carregar a página
 updateVisitCounter();
 
+
+// Capturar detalhes do visitante
+async function logVisitorDetails() {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        const ipAddress = data.ip;
+
+        const userAgent = navigator.userAgent;
+
+        // Salvar informações no Firebase
+        const visitorData = {
+            ip: ipAddress,
+            userAgent: userAgent,
+            timestamp: new Date().toISOString()
+        };
+
+        await db.ref("visitors/").push(visitorData);
+
+        console.log("Detalhes do visitante registrados:", visitorData);
+    } catch (error) {
+        console.error("Erro ao registrar detalhes do visitante:", error);
+    }
+}
+
+// Registrar detalhes do visitante
+logVisitorDetails();
+
+
         </script>
 
 </body>
