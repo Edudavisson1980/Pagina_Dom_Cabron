@@ -24,7 +24,7 @@
             position: relative;
             width: 100%;
             height: calc(150px + 40px * 2); /* Ajusta a altura total da seção com base na altura do logo e margem */
-            background: url('Azul.jpg') no-repeat center center/cover;
+            background: url('Azul.webp') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -432,38 +432,38 @@
 
 <section class="section videos">
     <div class="video">
-        <video controls width="100%">
-            <source src="video_1.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
+        <video controls width="100%" loading="lazy">
+    <source src="video_1.mp4" type="video/mp4">
+    Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-title">No ensaio</div>
     </div>
     <div class="video">
-        <video controls width="100%">
+        <video controls width="100%" loading="lazy">
             <source src="Video_6.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-title">Hangar 111 (Jundiaí)</div>
     </div>
     <div class="video">
-        <video controls width="100%">
+        <video controls width="100%" loading="lazy">
             <source src="video_3.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-title">Lions (Vinhedo)</div>
     </div>
     <div class="video">
-        <video controls width="100%">
+        <video controls width="100%" loading="lazy">
             <source src="video_4.mp4" type="video/mp4">
             Seu navegador não suporta o elemento de vídeo.
         </video>
         <div class="video-title">Rocket 88 (Jundiaí)</div>
     </div>
     <div class="video">
-    <video controls width="100%">
-        <source src="video_5.mp4" type="video/mp4">
-        Seu navegador não suporta o elemento de vídeo.
-    </video>
+        <video controls width="100%" loading="lazy">
+            <source src="video_5.mp4.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
     <div class="video-title">Lice Café (Jarinu)</div>
 
     </div>
@@ -683,6 +683,24 @@ async function updateVisitCounter() {
 
 // Chamar a função ao carregar a página
 updateVisitCounter();
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const mediaElements = [
+        { type: 'video', src: 'video_1.mp4' },
+        { type: 'video', src: 'Video_6.mp4' },
+        { type: 'video', src: 'video_3.mp4' },
+        { type: 'video', src: 'video_4.mp4' },
+        { type: 'image', src: 'Azul.webp' }
+    ];
+
+    mediaElements.forEach(media => {
+        const element = document.createElement(media.type === 'video' ? 'video' : 'img');
+        element.src = media.src;
+        element.onload = () => console.log(`${media.src} carregado`);
+        document.body.appendChild(element).style.display = 'none'; // Pré-carrega sem mostrar
+    });
+});
 
         </script>
 
