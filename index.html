@@ -713,12 +713,44 @@ async function logVisitorDetails() {
 logVisitorDetails();
 
 async function getVisitorLocation(ip) {
-    const response = await fetch(`https://ipinfo.io/{177.115.74.91}/?token=6506d361850b98`);
+    const response = await fetch(`https://ipinfo.io/${177.115.74.91}/json?token=6506d361850b98`);
     const data = await response.json();
     console.log("Localização do visitante:", data);
     return data;
 }
 
+async function logVisitorDetails() {
+    try {
+        // Obter o IP do visitante
+        const ipResponse = await fetch('https://api.ipify.org?format=json');
+        const { ip } = await ipResponse.json();
+
+        // Obter localização do IP
+        const locationResponse = await fetch(`http://ip-api.com/json/${ip}`);
+        const locationData = await locationResponse.json();
+
+        const visitorData = {
+            ip: ip,
+            location: {
+                country: locationData.country,
+                region: locationData.regionName,
+                city: locationData.city,
+                isp: locationData.isp
+            },
+            userAgent: navigator.userAgent,
+            timestamp: new Date().toISOString()
+        };
+
+        // Salvar no Firebase
+        await db.ref("visitors/").push(visitorData);
+
+        console.log("Detalhes do visitante registrados:", visitorData);
+    } catch (error) {
+        console.error("Erro ao registrar detalhes do visitante:", error);
+    }
+}
+
+logVisitorDetails();
 
         </script>
 
