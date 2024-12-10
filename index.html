@@ -713,7 +713,7 @@ async function logVisitorDetails() {
 logVisitorDetails();
 
 async function getVisitorLocation(ip) {
-    const response = await fetch(`https://ipinfo.io/${177.115.74.91}/json?token=6506d361850b98`);
+    const response = await fetch(`https://ipinfo.io/${ip}/json?token=6506d361850b98`);
     const data = await response.json();
     console.log("Localização do visitante:", data);
     return data;
@@ -752,7 +752,7 @@ async function logVisitorDetails() {
 
 logVisitorDetails();
 
-        </script>
+    </script>
 
 </body>
 </html>
