@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dom Cabron</title>
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
 
     <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+AR:wght@100..400&display=swap" rel="stylesheet">
@@ -19,40 +20,102 @@
             padding: 0;
         }
         
-        
+        /* Cabeçalho com estilo e animação */
+        @keyframes fadeInSlide {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
         header {
             position: relative;
             width: 100%;
-            height: calc(150px + 40px * 2); /* Ajusta a altura total da seção com base na altura do logo e margem */
+            height: calc(150px + 40px * 2);
             background: url('Cabecalho_1.webp') no-repeat center center/cover;
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start; /* Alinha à esquerda */
             justify-content: center;
-            padding-top: 40px; /* Margem superior em relação ao logo */
-            padding-bottom: 40px; /* Margem inferior em relação ao logo */
+            padding-top: 40px;
+            padding-left: 20px;
+            padding-bottom: 40px;
         }
+    
+        <style>
+            /* Reset global para margens e paddings */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
         
+            html, body {
+                width: 100%;
+                height: 100%;
+                overflow-x: hidden;
+            }
         
+            img, video {
+                max-width: 100%;
+                height: auto;
+            }
+        
+
         header img {
-            max-height: 200px; /* Aumentar o tamanho do logo */
+            max-height: 200px;
             margin-right: 20px;
             margin-left: 40px;
-
         }
+    
         .title-container {
             flex-grow: 1;
             text-align: left;
             padding-left: 20px;
+        }
+    
+        .title-container h1,
+        .title-container h2 {
+            margin: 0;
+            font-family: 'Rock Salt', cursive;
+            color: #f4f4f4;
+            overflow: hidden;
+            white-space: nowrap;
             
         }
-        .title-container h1, .title-container h2 {
-            margin: 0;
-            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
-            color: #f4f4f4;
+    
+        .title-container h1 {
+            font-size: 2.5rem;
+            animation: fadeInSlide 1s ease-out forwards, typingEffect 3s steps(30) 1s forwards;
         }
+    
+        .title-container h2 {
+            font-size: 1.5rem;
+            animation: fadeInSlide 1s ease-out forwards, typingEffect 3s steps(30) 2s forwards;
+        }
+    
+        @keyframes typingEffect {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+    
         .section {
             padding: 20px;
         }
+    
+
+        .videos2 {
+            text-align: center;
+        }
+        
         .videos {
             display: flex;
             justify-content: space-around;
@@ -79,13 +142,7 @@
             padding: 20px;
             background-color: #f4f4f4;
         }
-        .text-content {
-            flex: 1;
-            padding-right: 20px;
-        }
-        .text-content h2 {
-            font-family: 'Rock Salt', cursive; /* Aplicar fonte Rock Salt ao título */
-        }
+        
         .image-content {
             flex: 1;
             text-align: center;
@@ -402,6 +459,24 @@
         flex: 1 1 100%;
     }        
     }
+
+
+    
+        @media (max-width: 768px) {
+    header {
+          flex-direction: column;
+          align-items: center;
+        }
+
+    header img {
+          margin-bottom: 10px;
+        }
+
+        .title-container {
+            text-align: center;
+        }
+    }
+
 </style>
 </head>
 <body>
@@ -420,17 +495,26 @@
 <section class="section">
     <div class="texto">
     <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A dupla Dom cabron tem sua formação musical voltada para o Rock nacional com alguns elementos de violão flamenco  
-        dando um toque especial para as músicas.
-    </p>
     <p>
-        &nbsp;&nbsp;&nbsp;&nbsp;Criada em 2023 formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Edu
-        Davisson (Guitarra/Violão/Backing Vocal) usam um repertório bem seletivo com duração de 3hs em média tocando músicas de artistas como
-        Legião urbana , Cidade Negra , Charlie Brown Jr , Barão Vermelho , Cássia Eller , Titãs , LS Jack , Jota Quest entre outros. Abaixo uma pequena demonstração do trabalho 
-        da dupla com alguns vídeos de apresentações que também podem ser conferidos no instagram descrito abaixo.  
-        
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Somos a Dom Cabron, uma dupla acústica apaixonada pelo rock nacional. Desde 2023, levamos para os palcos versões acústicas dos grandes clássicos do gênero .
+        Criada e formada pelos músicos Samuel Belo (Vocal/Violão/Piano) e Edu Davisson (Guitarra/Violão/Backing Vocal) usamos um repertório bem seletivo com duração de 3hs em média tocando músicas de artistas como Legião urbana , Cidade Negra , Charlie Brown Jr , Barão Vermelho , Cássia Eller , Titãs , LS Jack , Jota Quest entre outros. Abaixo uma pequena demonstração do trabalho da nossa dupla com alguns vídeos de apresentações que também podem ser conferidos no instagram descrito abaixo.
+    Nosso som é simples, direto e verdadeiro, como todo bom rock deve ser. Se você gosta de música boa e de um violão bem tocado , venha nos ouvir. 🎸
+    Alguns dos lugares que já nos apresentamos : 
+    <p>- Hangar 111 (Jundiaí)</p>
+    <p>- Home office (Jundiaí)</p>
+    <p>- Lice Café (Jarinú)</p>
+    <p>- Hop Seekers (Itatiba)</p>
+    <p>- Botequim da Praça (Cabreúva)</p>   
+    <p>- Tabuas (Valinhos)</p>
+    <p>- Rocket 88 (Jundiaí)</p>
+    <p>- Lions (Vinhedo)</p>
+            
     </p>
     </div>
+</section>
+
+<section class="videos2">
+    <h2>Apresentações</h2>
 </section>
 
 <section class="section videos">
@@ -470,6 +554,14 @@
     <div class="video-title">Lice Café (Jarinu)</div>
 
     </div>
+
+<iframe width="560" height="315" 
+  src="https://www.youtube.com/embed/watch?v=b69TpHOzK4s&list=RDb69TpHOzK4s&start_radio=1" 
+  frameborder="0" allowfullscreen>
+</iframe>
+
+
+
     <section>
 
         <section class="photo-gallery">
@@ -503,7 +595,10 @@
                 <img src="Mural/Foto_26.jpg" alt="Foto 26">
                 <img src="Mural/Foto_27.jpg" alt="Foto 27">
                 <img src="Mural/Foto_28.png" alt="Foto 28">
-
+                <img src="Mural/Foto_29.jpg" alt="Foto 29">
+                <img src="Mural/Foto_30.jpg" alt="Foto 30">
+                <img src="Mural/Foto_31.jpg" alt="Foto 31">
+                <img src="Mural/Foto_32.jpeg" alt="Foto 32">
 
                 <!-- Adicione mais fotos aqui -->
             </div>
@@ -512,20 +607,17 @@
         <section class="section apresentacoes">
             <div class="text-content">
                 <h2>Próximas apresentações</h2>
-                <p>06/12 - Hangar 111 (Jundiaí)</p>
-                <p>07/12 - Lice Café (Jarinú)</p>
-                <p>13/12 - Evento fechado (Louveira)</p>
-                <p>14/12 - Hop Seekers (Itatiba)</p>
-                <p>20/12 - Bar do Salim (Jundiaí)</p>
-                <p>21/12 - Evento fechado (Cabreúva)</p>
-                <p>27/12 - Lice café (Jarinu)</p>
-                <p>28/12 - Bico do galo (Jundiai)</p>
-                <h3>--------------------------------------------</h3>
-                <h3> 2025</h3>
-                <p>03/01 - Rocket 88 (Jundiaí)</p>
-                <p>04/01 - Kremer (Jundiaí)</p>
-                <p>11/01 - Lice café (Jarinu)</p>
+                <h3>Março</h3>
+                <p>01/03 - Wine bar (Jundiaí)</p>
+                <p>08/03 - Lice Café (Jarinú)</p>
+                <p>14/03 - Boteco da 9 (Jundiaí)</p>
+                <p>22/03 - Clube de Campo Cabreúva (Cabreúva)</p>
+                <p>29/03 - Evento fechado (Itupeva)</p>
 
+                <h3>Abril</h3>
+                <p>05/04 - Hangar 111 (Jundiaí)</p>
+                <p>12/04 - Rocket 88 (Jundiaí)</p>
+               
             </div>
 
                 <div class="image-content">
@@ -535,9 +627,9 @@
                 </div>
 
                 <div class="image-content_2">
-                    <img src="Mural/logo.jpg" alt="Imagem da apresentação">
+                    <img src="logo.jpg" alt="Imagem da apresentação">
                     <div class="image-title_2">Foto do logo</div>
-                    <a href="Mural/logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
+                    <a href="logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
                 </div>
 
 
@@ -756,6 +848,43 @@ async function logVisitorDetails() {
 }
 
 logVisitorDetails();
+
+
+    // Textos a serem digitados
+    const tituloTexto = "Bem-vindo ao meu site!";
+    const subtituloTexto = "Aqui você encontra as melhores novidades.";
+
+    let tituloIndex = 0;
+    let subtituloIndex = 0;
+
+    const tituloElemento = document.getElementById("titulo");
+    const subtituloElemento = document.getElementById("subtitulo");
+
+    function digitarTitulo() {
+        if (tituloIndex < tituloTexto.length) {
+            tituloElemento.textContent += tituloTexto.charAt(tituloIndex);
+            tituloIndex++;
+            setTimeout(digitarTitulo, 100); // Velocidade da digitação
+        } else {
+            // Inicia o subtítulo após o título
+            setTimeout(digitarSubtitulo, 500);
+        }
+    }
+
+    function digitarSubtitulo() {
+        if (subtituloIndex < subtituloTexto.length) {
+            subtituloElemento.textContent += subtituloTexto.charAt(subtituloIndex);
+            subtituloIndex++;
+            setTimeout(digitarSubtitulo, 100);
+        } else {
+            // Remove o cursor quando termina a digitação
+            tituloElemento.style.borderRight = "none";
+            subtituloElemento.style.borderRight = "none";
+        }
+    }
+
+    // Inicia a animação ao carregar a página
+    window.onload = digitarTitulo;
 
     </script>
 
