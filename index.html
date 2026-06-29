@@ -47,7 +47,7 @@
             padding-bottom: 40px;
         }
     
-        <style>
+        
             /* Reset global para margens e paddings */
             * {
                 margin: 0;
@@ -143,6 +143,8 @@
             align-items: center;
             padding: 20px;
             background-color: #f4f4f4;
+            margin-bottom:15px;
+            line-height:1.8;
         }
         
         .image-content {
@@ -175,11 +177,11 @@
             background: #e0e0e0;
         }
         
-        .video {
+        .videos .video {
             width: 100%;
-            max-width: 200px; /* Ajuste o tamanho máximo conforme necessário */
+            max-width: 200px;
             margin-bottom: 20px;
-        }
+    }
 
         .texto {
             font-family: 'Playwrite', cursive; /* Aplicar fonte Rock Salt ao título */
@@ -187,7 +189,7 @@
            
         }
 
-        // ESTILIZAÇÃO DE FORMULARIO
+        /* ESTILIZAÇÃO DE FORMULARIO */
 
         .feedback form {
             display: flex;
@@ -272,7 +274,7 @@
 
         
 
-        // ESTILIZAÇÃO DO FORMULARIO 
+        /* ESTILIZAÇÃO DO FORMULARIO */
 
         section#feedbackSection {
             background-image: url('Azul.jpg');
@@ -322,13 +324,27 @@
                     background-color: #555;
                 }
 
-        .comment {
-            background-image: url('Azul.jpg');
-            padding: 10px;
-            border-radius: 5px;
-            margin-top: 10px;
-            color: white;
-        }
+        .comment{
+    background:#ffffff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:15px;
+    margin-top:10px;
+    margin-bottom:10px;
+    color:#333;
+    box-shadow:0 2px 5px rgba(0,0,0,.10);
+}
+
+.comment strong{
+    display:block;
+    margin-bottom:8px;
+    color:#222;
+}
+
+.comment p{
+    margin:0;
+    line-height:1.5;
+}
 
         .photo-gallery {
             max-width: 1000px;
@@ -401,6 +417,24 @@
         .apresentacoes {
             flex-direction: column;
         }
+
+        .text-content{
+    flex:1;
+    padding-right:20px;
+}
+
+.text-content h2{
+    margin-bottom:15px;
+}
+
+.text-content h3{
+    margin-bottom:10px;
+}
+
+.text-content p{
+    margin-bottom:8px;
+    font-size:16px;
+}
         .text-content h2 {
             padding-right: 0;
             text-align: center;
@@ -412,7 +446,7 @@
         .image-content {
             text-align: center;
         }
-
+    }
                
 
         @media (max-width: 576px) {
@@ -440,6 +474,8 @@
             .titulo {
                 text-align: center
             }
+
+        }
 
             .feedback {
                 background-color: #f4f4f4;
@@ -478,6 +514,206 @@
             text-align: center;
         }
     }
+
+/* ===== MINHAS GRAVAÇÕES ===== */
+
+.gravacoes{
+    padding:30px;
+    background:transparent;
+}
+
+.gravacoes h2{
+    text-align:center;
+    margin-bottom:25px;
+    
+}
+
+.gravacoes-container{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    align-items:flex-start;
+    gap:15px;
+    flex-wrap:nowrap;
+    overflow-x:auto;
+    
+}
+
+.music-card{
+    width: 140px;
+    min-width:160px;
+    background-image: url('Azul.jpg');
+    border-radius:10px;
+    padding:10px;
+    text-align:center;
+    box-shadow:0 0 5px rgba(0,0,0,.2);
+}
+
+.play-btn{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    font-size:24px;
+    
+}
+
+.music-title{
+    margin-top:10px;
+    font-weight:bold;
+}
+
+.music-card audio{
+    display:none;
+    
+}
+
+.caneca-video{
+    width:140px;
+    min-width:140px;
+    padding:0;
+    margin:0;
+}
+
+.caneca-video video{
+    width:140px;
+    height:140px;
+    object-fit:cover;
+    display:block;
+}
+
+.caneca-card video{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    border-radius:8px;
+}
+
+
+/* ===========================
+   RESPONSIVIDADE CELULAR
+===========================*/
+@media (max-width:768px){
+
+body{
+    overflow-x:hidden;
+}
+
+/* Cabeçalho */
+
+header{
+    height:auto;
+    padding:30px 15px;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.title-container{
+    padding:0;
+    text-align:center;
+}
+
+.title-container h1,
+.title-container h2{
+    white-space:normal;
+    width:100%;
+}
+
+.title-container h1{
+    font-size:2rem;
+    line-height:1.2;
+}
+
+.title-container h2{
+    font-size:1.1rem;
+    margin-top:10px;
+}
+
+/* Texto */
+
+.texto{
+    font-size:17px;
+    line-height:1.8;
+}
+
+.section{
+    padding:15px;
+}
+
+/* Videos */
+
+.videos{
+    flex-direction:column;
+    align-items:center;
+}
+
+.video{
+    width:100%;
+    max-width:360px;
+}
+
+/* Gravações */
+
+.gravacoes-container{
+    gap:15px;
+    padding-bottom:10px;
+}
+
+.music-card{
+    min-width:140px;
+}
+
+.caneca-video{
+    min-width:140px;
+}
+
+/* Próximas apresentações */
+
+.apresentacoes{
+    flex-direction:column;
+    text-align:center;
+}
+
+.text-content{
+    padding:0;
+}
+
+.image-content_2{
+    margin-top:20px;
+}
+
+/* Galeria */
+
+.gallery{
+    grid-template-columns:repeat(3,1fr);
+}
+
+/* Formulário */
+
+.feedback .form-row{
+    flex-direction:column;
+}
+
+.feedback input,
+.feedback textarea{
+    width:100%;
+}
+
+/* Contato */
+
+.contact{
+    text-align:center;
+}
+
+.contact p{
+    font-size:17px;
+    margin:15px 0;
+}
+
+}
+
 
 </style>
 </head>
@@ -550,6 +786,66 @@
     </div>
     <section>
 
+        
+
+    <section class="gravacoes">
+
+    <h2>Gravações</h2>
+
+    <div class="gravacoes-container">
+
+        <div class="music-card">
+            <button class="play-btn" onclick="toggleAudio('audio1', this)">▶</button>
+            <audio id="audio1">
+                <source src="Gravacoes/Drive_Incubus.mp4" type="audio/mpeg">
+            </audio>
+            <div class="music-title">Drive (Incubus) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+        </div>
+
+        <div class="music-card">
+            <button class="play-btn" onclick="toggleAudio('audio2', this)">▶</button>
+            <audio id="audio2">
+                <source src="Gravacoes/Loucos_CBJ.mp4" type="audio/mpeg">
+            </audio>
+            <div class="music-title">Só os loucos sabem (CBJ)</div>
+        </div>
+
+        <div class="music-card">
+            <button class="play-btn" onclick="toggleAudio('audio3', this)">▶</button>
+            <audio id="audio3">
+                <source src="Gravacoes/Blue_Suede_Shoes.mp4" type="audio/mpeg">
+            </audio>
+            <div class="music-title">Blue Suede Shoes (Elvis Presley)</div>
+        </div>
+
+        <div class="music-card">
+            <button class="play-btn" onclick="toggleAudio('audio4', this)">▶</button>
+            <audio id="audio4">
+                <source src="Gravacoes/Aonde_quer.mp4" type="audio/mpeg">
+            </audio>
+            <div class="music-title">Aonde quer que eu vá (Paralamas)</div>
+        </div>
+
+        <div class="music-card">
+            <button class="play-btn" onclick="toggleAudio('audio5', this)">▶</button>
+            <audio id="audio5">
+                <source src="Gravacoes/Sol_Victor_Kley.mp4" type="audio/mpeg">
+            </audio>
+            <div class="music-title">Sol (Victor Kley) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        </div>
+
+        <div class="caneca-video">
+    <video autoplay muted loop playsinline>
+        <source src="caneca.mp4" type="video/mp4">
+    </video>
+</div>
+
+    </div>
+
+</section>
+
+
+
         <section class="photo-gallery">
             <h2>Mural de Fotos</h2>
             <div class="gallery">
@@ -604,27 +900,28 @@
         </section>
 
         <section class="section apresentacoes">
-            <div class="text-content">
-                <h2>Próximas apresentações</h2>
-                <h3>Junho</h3>
-                <p>06/06 - Evento fechado (Valinhos - SP)</p>
-                <p>12/06 - Dinossauros (Jundiaí - SP)</p>
-                <p>13/06 - Aniversário de 15 anos (Itupeva - SP)</p>
-                <p>19/06 - Pátio Cica (Jundiai - SP)</p>
-                <p>20/06 - Bodegon (Vinhedo - SP)</p>
-                <p>27/06 - Pururucas (Vinhedo - SP)</p>
-                
-                <h3></h3>
-                <p></p>
-               
-            </div>
 
-                <div class="image-content_2">
-                    <img src="logo.jpg" alt="Imagem da apresentação">
-                    <div class="image-title_2">Foto do logo</div>
-                    <a href="logo.jpg" download="logo.jpg">Baixar logo</a> <!-- Link para download da imagem -->
-                </div>
+    <div class="text-content">
 
+        <h2>Próximas apresentações</h2>
+
+        <h3>Junho</h3>
+
+        <p>06/06 - Evento fechado (Valinhos - SP)</p>
+        <p>12/06 - Dinossauros (Jundiaí - SP)</p>
+        <p>13/06 - Aniversário de 15 anos (Itupeva - SP)</p>
+        <p>19/06 - Pátio Cica (Jundiaí - SP)</p>
+        <p>20/06 - Bodegon (Vinhedo - SP)</p>
+        <p>27/06 - Pururucas (Vinhedo - SP)</p>
+
+    </div>
+
+    <div class="image-content_2">
+        <img src="logo.jpg" alt="Logo Dom Cabron">
+        <div class="image-title_2">Logo da Banda</div>
+    </div>
+
+</section>
 
         </section>
 
@@ -745,12 +1042,16 @@
         commentsSection.innerHTML = ""; // Limpa os comentários
         snapshot.forEach((childSnapshot) => {
             const comment = childSnapshot.val();
-            const li = document.createElement("li");
-            li.innerHTML = `
-                <strong>${comment.date} - ${comment.name} (${comment.city}):</strong>
-                <p>${comment.comment}</p>
-            `;
-            commentsSection.appendChild(li);
+            const div = document.createElement("div");
+
+div.classList.add("comment");
+
+div.innerHTML = `
+    <strong>${comment.date} - ${comment.name} (${comment.city})</strong>
+    <p>${comment.comment}</p>
+`;
+
+commentsSection.appendChild(div);
         });	
     });
          
@@ -878,6 +1179,58 @@ logVisitorDetails();
 
     // Inicia a animação ao carregar a página
     window.onload = digitarTitulo;
+
+    function toggleAudio(audioId, button){
+
+    const currentAudio = document.getElementById(audioId);
+
+    document.querySelectorAll('audio').forEach(audio => {
+
+        if(audio.id !== audioId){
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+    });
+
+    document.querySelectorAll('.play-btn').forEach(btn => {
+        btn.innerHTML = "▶";
+    });
+
+    
+    if(currentAudio.paused){
+
+        currentAudio.play();
+        button.innerHTML = "⏸";
+
+    }else{
+
+        currentAudio.pause();
+        button.innerHTML = "▶";
+
+    }
+
+    currentAudio.onended = function(){
+        button.innerHTML = "▶";
+    };
+}
+
+document.querySelectorAll('video').forEach(video => {
+
+    video.addEventListener('play', () => {
+
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.innerHTML = "▶";
+        });
+
+    });
+
+});
 
     </script>
 
